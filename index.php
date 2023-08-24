@@ -21,7 +21,7 @@
          $sc_log = fopen('sc_log', 'r');
          while ($line = fgets($sc_log)) {
              foreach (str_split($line) as $char) {
-                 echo "az";
+                 echo "";
              }
              echo $line . "\n";
          } 
@@ -31,7 +31,7 @@
      if ($_POST) {
          $sc_log = fopen("sc_log", "a");
          $msg= $_POST["mytextarea"];
-         fwrite($sc_log, ".date=" . date("Y-m-dTH:i:s") . ".msg=" . $msg . "\n");
+         fwrite($sc_log, "<div class='sc_chatfield'>" . ".date=" . date("Y-m-dTH:i:s") . ".msg=" . $msg . "</div>" . "\n");
          sc_load_chat();
          fclose($sc_log);
      }
